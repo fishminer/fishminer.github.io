@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ｒ图形总结(三) | FishMiner的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="当我们可以绘画出优美图形的时候，我们常常幻想于图案可以变得鲜活起来。在运用R做数据分析的时候，我们有幸可以得到这样一支神笔，不仅可以随心所欲的画出我们想要的图形，而且可以与图形交互，使其能听懂我们的心意，赋予图形强大的生命力。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ｒ图形总结(三)">
+<meta property="og:url" content="http://fishminer.github.io/2015/12/03/R图形总结(三)/index.html">
+<meta property="og:site_name" content="FishMiner的博客">
+<meta property="og:description" content="当我们可以绘画出优美图形的时候，我们常常幻想于图案可以变得鲜活起来。在运用R做数据分析的时候，我们有幸可以得到这样一支神笔，不仅可以随心所欲的画出我们想要的图形，而且可以与图形交互，使其能听懂我们的心意，赋予图形强大的生命力。">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/histogram.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/scatter.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/zidingyi.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/loess.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/group.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/key.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/fuza.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/jiadian.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/zhixin.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/facets.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/R图形总结-3/density.jpg">
+<meta property="og:updated_time" content="2015-12-03T12:36:06.503Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ｒ图形总结(三)">
+<meta name="twitter:description" content="当我们可以绘画出优美图形的时候，我们常常幻想于图案可以变得鲜活起来。在运用R做数据分析的时候，我们有幸可以得到这样一支神笔，不仅可以随心所欲的画出我们想要的图形，而且可以与图形交互，使其能听懂我们的心意，赋予图形强大的生命力。">
+  
+    <link rel="alternative" href="/atom.xml" title="FishMiner的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?39b64bb1ef09664f33abc23395ed37d0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/sikao.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">FishMiner</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">every step led me here.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/tags/技术类">技术类</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/fishminer" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/#" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/技术类/" style="font-size: 10px;">技术类</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">专注于大数据和数据分析，数据挖掘。本人邮箱695579270@qq.com, 欢迎交流和学习。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">FishMiner</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/images/sikao.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">FishMiner</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">every step led me here.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/tags/技术类">技术类</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/fishminer" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/#" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-R图形总结(三)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/03/R图形总结(三)/" class="article-date">
+  	<time datetime="2015-12-02T16:27:30.000Z" itemprop="datePublished">2015-12-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ｒ图形总结(三)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术类/">技术类</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/R-Language/">R Language</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我们可以绘画出优美图形的时候，我们常常幻想于图案可以变得鲜活起来。在运用R做数据分析的时候，我们有幸可以得到这样一支神笔，不仅可以随心所欲的画出我们想要的图形，而且可以与图形交互，使其能听懂我们的心意，赋予图形强大的生命力。</p>
+<a id="more"></a>
+<p>首先来回顾一下R里面四种主要的图形系统。</p>
+<ul>
+<li><p>grid图形系统，这种系统很灵活，但是太灵活了也就意味着复杂，它没有提供生成统计图形以及完整绘图的函数。</p>
+</li>
+<li><p>lattice图形系统，轻松生成栅栏图，单变量和多变量数据可视化均常用它，可以画出基础包难以画出的图形。</p>
+</li>
+<li><p>ggplot2图形系统，基于语法的、连贯一致的图形生成系统。简单来说，就是参数非常多，非常规范。因为规范，所以方便使用。</p>
+</li>
+<li><p>base图形系统，默认安装使用的。</p>
+</li>
+</ul>
+<h2 id="lattice图形系统">lattice图形系统</h2><p>可以加入条件变量，单个面板根据条件变量的水平来创建。</p>
+<p><img src="/images/R图形总结-3/histogram.jpg" alt="栅栏直方图"></p>
+<p><img src="/images/R图形总结-3/scatter.jpg" alt="scatter"></p>
+<p>可以自定义面板函数加入轴须，网格线，拟合直线。这个用base包难以做到。</p>
+<p><img src="/images/R图形总结-3/zidingyi.jpg" alt="自定义面板函数"></p>
+<p>加入均值线，网格线，平滑拟合曲线。</p>
+<p><img src="/images/R图形总结-3/loess.jpg" alt="自定义面板函数"></p>
+<p>当我们不想用多个栅栏显示，只想显示在一个面板里面的时候，可以用分组变量。</p>
+<p><img src="/images/R图形总结-3/group.jpg" alt="显示在一个面板"></p>
+<p>如果想自定义图例，那么使用key选项。以下是含有分组变量的核密度曲线图。</p>
+<p><img src="/images/R图形总结-3/key.jpg" alt="自定义图例"></p>
+<p>下面来个复杂的，包含分组变量、条件变量和自定义图例的xyplot图。</p>
+<p><img src="/images/R图形总结-3/fuza.jpg" alt="复杂的"></p>
+<h2 id="ggplot2图形系统">ggplot2图形系统</h2><p>如果想在基本图上绘制更多图，比如箱线图上加点（base包不容易做出这种效果），可以用qplot快速绘图。</p>
+<p><img src="/images/R图形总结-3/jiadian.jpg" alt="箱线图上加点"></p>
+<p>如下加回归线和置信区间带。</p>
+<p><img src="/images/R图形总结-3/zhixin.jpg" alt="回归线和置信区间带"></p>
+<p>如果想很多变量展现在一个栅栏图里，也可以用它绘制如下图形。</p>
+<p><img src="/images/R图形总结-3/facets.jpg" alt="多变量一个图"></p>
+<p>用lattice包可以做的，它也可以做。</p>
+<p><img src="/images/R图形总结-3/density.jpg" alt="density"></p>
+<h2 id="交互式图形">交互式图形</h2><p>此种图形可以通过鼠标修改图形，与图形交互。比如说点击多面板图形中某个特殊点，然后其他面板该点对应区域会高亮显示。此种图形不作详细说明。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="R图形总结(三)" data-title="Ｒ图形总结(三)" data-url="http://fishminer.github.io/2015/12/03/R图形总结(三)/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"scattermangithubio"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 FishMiner
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
