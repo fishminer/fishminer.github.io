@@ -3,32 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>重抽样与自助法 | FishMiner的博客</title>
+  <title>广义线性模型 | FishMiner的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="你说我像云捉摸不定其实你不懂我的心你说我像梦忽远又忽近其实你不懂我的心你说我像谜总看不清其实我永不在乎掩藏真心　　　　　　　　　　　　　　　　　　　　　　　　                            ——童安格，《其实你不懂我的心》
+  <meta name="description" content="生存还是毁灭，这是一个问题。　　　　　　　　　　　　　　　　　　　　　　　　                                ——莎士比亚，《哈姆莱特》
 
-在数据分析领域，也经常有这么一群数据，分布捉摸不定，离群点忽远又忽近，对这类数据怎么分析呢？有一套比较有效的办法处理这类数据，这就是置换检验和自助法。">
+在莎翁的笔下，哈姆莱特发出这么一声呐喊，但是在数据分析领域，这就不是一个问题了，生活中像生存/毁灭这种二值变量，差评/中评/好评这种多分类变量，都可以使用广义线性模型来处理。广义线性模型有非常多的分布族，其中比较常用的是Logis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重抽样与自助法">
-<meta property="og:url" content="http://fishminer.github.io/2016/01/21/重抽样与自助法/index.html">
+<meta property="og:title" content="广义线性模型">
+<meta property="og:url" content="http://fishminer.github.io/2016/01/28/广义线性模型/index.html">
 <meta property="og:site_name" content="FishMiner的博客">
-<meta property="og:description" content="你说我像云捉摸不定其实你不懂我的心你说我像梦忽远又忽近其实你不懂我的心你说我像谜总看不清其实我永不在乎掩藏真心　　　　　　　　　　　　　　　　　　　　　　　　                            ——童安格，《其实你不懂我的心》
+<meta property="og:description" content="生存还是毁灭，这是一个问题。　　　　　　　　　　　　　　　　　　　　　　　　                                ——莎士比亚，《哈姆莱特》
 
-在数据分析领域，也经常有这么一群数据，分布捉摸不定，离群点忽远又忽近，对这类数据怎么分析呢？有一套比较有效的办法处理这类数据，这就是置换检验和自助法。">
-<meta property="og:image" content="http://fishminer.github.io/images/重抽样与自助法/t.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/重抽样与自助法/kafang.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/重抽样与自助法/xiangguan.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/重抽样与自助法/jiandan.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/重抽样与自助法/duoxiangshi.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/重抽样与自助法/duoyuan.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/重抽样与自助法/dange.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/重抽样与自助法/duoge.jpg">
-<meta property="og:updated_time" content="2016-01-21T13:53:47.445Z">
+在莎翁的笔下，哈姆莱特发出这么一声呐喊，但是在数据分析领域，这就不是一个问题了，生活中像生存/毁灭这种二值变量，差评/中评/好评这种多分类变量，都可以使用广义线性模型来处理。广义线性模型有非常多的分布族，其中比较常用的是Logis">
+<meta property="og:updated_time" content="2016-01-28T13:26:23.008Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重抽样与自助法">
-<meta name="twitter:description" content="你说我像云捉摸不定其实你不懂我的心你说我像梦忽远又忽近其实你不懂我的心你说我像谜总看不清其实我永不在乎掩藏真心　　　　　　　　　　　　　　　　　　　　　　　　                            ——童安格，《其实你不懂我的心》
+<meta name="twitter:title" content="广义线性模型">
+<meta name="twitter:description" content="生存还是毁灭，这是一个问题。　　　　　　　　　　　　　　　　　　　　　　　　                                ——莎士比亚，《哈姆莱特》
 
-在数据分析领域，也经常有这么一群数据，分布捉摸不定，离群点忽远又忽近，对这类数据怎么分析呢？有一套比较有效的办法处理这类数据，这就是置换检验和自助法。">
+在莎翁的笔下，哈姆莱特发出这么一声呐喊，但是在数据分析领域，这就不是一个问题了，生活中像生存/毁灭这种二值变量，差评/中评/好评这种多分类变量，都可以使用广义线性模型来处理。广义线性模型有非常多的分布族，其中比较常用的是Logis">
   
     <link rel="alternative" href="/atom.xml" title="FishMiner的博客" type="application/atom+xml">
   
@@ -195,11 +187,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-重抽样与自助法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-广义线性模型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/21/重抽样与自助法/" class="article-date">
-  	<time datetime="2016-01-20T16:27:30.000Z" itemprop="datePublished">2016-01-21</time>
+      <a href="/2016/01/28/广义线性模型/" class="article-date">
+  	<time datetime="2016-01-27T16:27:30.000Z" itemprop="datePublished">2016-01-28</time>
 </a>
     </div>
   
@@ -212,7 +204,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      重抽样与自助法
+      广义线性模型
     </h1>
   
 
@@ -237,33 +229,31 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>你说我像云捉摸不定<br>其实你不懂我的心<br>你说我像梦忽远又忽近<br>其实你不懂我的心<br>你说我像谜总看不清<br>其实我永不在乎掩藏真心<br>　　　　　　　　　　　　　　　　　　　　　　　　                            ——童安格，《其实你不懂我的心》</p>
+<p>生存还是毁灭，这是一个问题。<br>　　　　　　　　　　　　　　　　　　　　　　　　                                ——莎士比亚，《哈姆莱特》</p>
 </blockquote>
-<p>在数据分析领域，也经常有这么一群数据，分布捉摸不定，离群点忽远又忽近，对这类数据怎么分析呢？有一套比较有效的办法处理这类数据，这就是置换检验和自助法。</p>
-<a id="more"></a>
-<h2 id="置换检验">置换检验</h2><p>置换检验主要用于生成零假设的P值，当样本有离群点，或者小样本，再或者我们想用非参数法进行假设检验，那么可以尝试置换检验。置换检验本质上是随机化检验，与参数法假设检验相比，使用条件要宽松许多，在一切方法用尽的时候，或者没有其他更好的方法时，可以考虑置换检验。下面列出常见的假设检验对应的置换检验。</p>
-<p><strong>1. t检验</strong></p>
-<p><img src="/images/重抽样与自助法/t.jpg" alt="t检验"></p>
-<p><strong>2. 卡方检验</strong></p>
-<p><img src="/images/重抽样与自助法/kafang.jpg" alt="卡方检验"></p>
-<p><strong>3. 相关性检验</strong></p>
-<p><img src="/images/重抽样与自助法/xiangguan.jpg" alt="相关性检验"></p>
-<p><strong>4. 简单线性回归</strong></p>
-<p><img src="/images/重抽样与自助法/jiandan.jpg" alt="简单线性回归"></p>
-<p><strong>5. 多项式回归</strong></p>
-<p><img src="/images/重抽样与自助法/duoxiangshi.jpg" alt="多项式回归"></p>
-<p><strong>6. 多元回归</strong></p>
-<p><img src="/images/重抽样与自助法/duoyuan.jpg" alt="多元回归"></p>
-<p><strong>7. 单因素方差分析</strong></p>
-<p><strong>8. 单因素协方差分析</strong></p>
-<p><strong>9. 双因素方差分析</strong></p>
-<h2 id="自助法">自助法</h2><p>自助法可以获取置信区间和估计测量精度。</p>
-<p><strong>1. 对单个统计量使用自助法</strong></p>
-<p>比如在回归分析中，我们想获得95%的R平方值的置信区间，可以使用非参数的自助法。</p>
-<p><img src="/images/重抽样与自助法/dange.jpg" alt="单个统计量"></p>
-<p><strong>2. 对多个统计量使用自助法</strong></p>
-<p>比如在回归分析中，我们想获得一个统计向量（三个回归系数）的95%置信区间，可以使用非参数的自助法。</p>
-<p><img src="/images/重抽样与自助法/duoge.jpg" alt="多个统计量"></p>
+<p>在莎翁的笔下，哈姆莱特发出这么一声呐喊，但是在数据分析领域，这就不是一个问题了，生活中像生存/毁灭这种二值变量，差评/中评/好评这种多分类变量，都可以使用广义线性模型来处理。广义线性模型有非常多的分布族，其中比较常用的是Logistic回归（二项分布）和泊松回归（泊松分布）。</p>
+<h2 id="Logistic回归">Logistic回归</h2><p>当通过一系列连续型或类别型预测变量来预测二值型结果变量时，可以使用Logistic回归。如果出现过度离势，需要把二项分布改为类二项分布。那么如何检测过度离势？</p>
+<p>q=残差偏差/残差自由度，q非常接近于1，表示没有过度离势。</p>
+<p>扩展的Logistic回归和变种如下。</p>
+<ul>
+<li><p>稳健Logistic回归： 当数据出现离群点和强影响点时，可使用稳健Logistic回归。</p>
+</li>
+<li><p>多项分布回归： 若响应变量包含两个以上的无序类别，可以使用多项分布回归。</p>
+</li>
+<li><p>序数Logistic回归：若响应变量是一组有序类别，可以使用序数Logistic回归。</p>
+</li>
+</ul>
+<h2 id="泊松回归">泊松回归</h2><p>当通过一系列连续型或类别型预测变量来预测计数型结果变量时，可以使用泊松回归。如果出现过度离势，需要把泊松分布改为类泊松分布。如何检测过度离势？</p>
+<p>q=残差偏差/残差自由度，q非常接近于1，表示没有过度离势。</p>
+<p>扩展的泊松回归和变种如下。</p>
+<ul>
+<li><p>时间段变化的泊松回归，此时需要加一个offset。</p>
+</li>
+<li><p>零膨胀的泊松回归，这个就相当于Logistic回归（预测结构零值）和泊松回归（预测无结构零值观测的计数）的组合。</p>
+</li>
+<li><p>稳健泊松回归。当存在离群点和强影响点时，该方法很有效。</p>
+</li>
+</ul>
 
       
     </div>
@@ -273,18 +263,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/01/28/广义线性模型/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          广义线性模型
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/14/功效分析/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">功效分析</div>
+    <a href="/2016/01/21/重抽样与自助法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">重抽样与自助法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -313,7 +294,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="重抽样与自助法" data-title="重抽样与自助法" data-url="http://fishminer.github.io/2016/01/21/重抽样与自助法/"></div>
+	<div class="ds-thread" data-thread-key="广义线性模型" data-title="广义线性模型" data-url="http://fishminer.github.io/2016/01/28/广义线性模型/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
