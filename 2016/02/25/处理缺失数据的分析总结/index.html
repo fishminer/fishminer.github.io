@@ -3,27 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>主成分和因子分析 | FishMiner的博客</title>
+  <title>处理缺失数据的分析总结 | FishMiner的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="手如柔荑，肤如凝脂，领如蝤蛴，齿如瓠犀，螓首蛾眉，巧笑倩兮，美目盼兮。　　　　　　　　　　　　　　　　　　　　　　　　                                ——《诗经·卫风·硕人》
+  <meta name="description" content="If you shed tears when you miss the sun, you also miss the stars. 如果你因失去了太阳而流泪,那么你也将失去群星了。　　　　　　　　　　　　　　　　　　　　　　　　                                —— 泰戈尔 《飞鸟集》
 
-古人写美女的诗词很多，最经典的应该就是诗经里面的这几句。来看看古人的审美观，手、脖子、牙齿、额头和眉毛、笑容、眼睛，古人选取了几个变量来描写美女。如果让计算机来看一个女性，它必然会选择成千上">
+在做数据分析的时候，我们经常遇到缺失数据的情况，造成这种情况有很多客观因素，而且">
 <meta property="og:type" content="article">
-<meta property="og:title" content="主成分和因子分析">
-<meta property="og:url" content="http://fishminer.github.io/2016/02/23/主成分和因子分析/index.html">
+<meta property="og:title" content="处理缺失数据的分析总结">
+<meta property="og:url" content="http://fishminer.github.io/2016/02/25/处理缺失数据的分析总结/index.html">
 <meta property="og:site_name" content="FishMiner的博客">
-<meta property="og:description" content="手如柔荑，肤如凝脂，领如蝤蛴，齿如瓠犀，螓首蛾眉，巧笑倩兮，美目盼兮。　　　　　　　　　　　　　　　　　　　　　　　　                                ——《诗经·卫风·硕人》
+<meta property="og:description" content="If you shed tears when you miss the sun, you also miss the stars. 如果你因失去了太阳而流泪,那么你也将失去群星了。　　　　　　　　　　　　　　　　　　　　　　　　                                —— 泰戈尔 《飞鸟集》
 
-古人写美女的诗词很多，最经典的应该就是诗经里面的这几句。来看看古人的审美观，手、脖子、牙齿、额头和眉毛、笑容、眼睛，古人选取了几个变量来描写美女。如果让计算机来看一个女性，它必然会选择成千上">
-<meta property="og:image" content="http://fishminer.github.io/images/主成分和因子分析/suishi.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/主成分和因子分析/zhuchengfen.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/主成分和因子分析/zhengjiao.jpg">
-<meta property="og:updated_time" content="2016-02-23T13:59:37.080Z">
+在做数据分析的时候，我们经常遇到缺失数据的情况，造成这种情况有很多客观因素，而且">
+<meta property="og:image" content="http://fishminer.github.io/images/处理缺失数据的分析总结/queshibiaoge.jpg">
+<meta property="og:image" content="http://fishminer.github.io/images/处理缺失数据的分析总结/queshituxing.jpg">
+<meta property="og:updated_time" content="2016-02-25T14:36:47.323Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="主成分和因子分析">
-<meta name="twitter:description" content="手如柔荑，肤如凝脂，领如蝤蛴，齿如瓠犀，螓首蛾眉，巧笑倩兮，美目盼兮。　　　　　　　　　　　　　　　　　　　　　　　　                                ——《诗经·卫风·硕人》
+<meta name="twitter:title" content="处理缺失数据的分析总结">
+<meta name="twitter:description" content="If you shed tears when you miss the sun, you also miss the stars. 如果你因失去了太阳而流泪,那么你也将失去群星了。　　　　　　　　　　　　　　　　　　　　　　　　                                —— 泰戈尔 《飞鸟集》
 
-古人写美女的诗词很多，最经典的应该就是诗经里面的这几句。来看看古人的审美观，手、脖子、牙齿、额头和眉毛、笑容、眼睛，古人选取了几个变量来描写美女。如果让计算机来看一个女性，它必然会选择成千上">
+在做数据分析的时候，我们经常遇到缺失数据的情况，造成这种情况有很多客观因素，而且">
   
     <link rel="alternative" href="/atom.xml" title="FishMiner的博客" type="application/atom+xml">
   
@@ -190,11 +189,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-主成分和因子分析" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-处理缺失数据的分析总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/23/主成分和因子分析/" class="article-date">
-  	<time datetime="2016-02-22T16:27:30.000Z" itemprop="datePublished">2016-02-23</time>
+      <a href="/2016/02/25/处理缺失数据的分析总结/" class="article-date">
+  	<time datetime="2016-02-24T16:27:30.000Z" itemprop="datePublished">2016-02-25</time>
 </a>
     </div>
   
@@ -207,7 +206,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      主成分和因子分析
+      处理缺失数据的分析总结
     </h1>
   
 
@@ -232,39 +231,32 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>手如柔荑，肤如凝脂，领如蝤蛴，齿如瓠犀，螓首蛾眉，巧笑倩兮，美目盼兮。<br>　　　　　　　　　　　　　　　　　　　　　　　　                                ——《诗经·卫风·硕人》</p>
+<p>If you shed tears when you miss the sun, you also miss the stars. 如果你因失去了太阳而流泪,那么你也将失去群星了。<br>　　　　　　　　　　　　　　　　　　　　　　　　                                —— 泰戈尔 《飞鸟集》</p>
 </blockquote>
-<p>古人写美女的诗词很多，最经典的应该就是诗经里面的这几句。来看看古人的审美观，手、脖子、牙齿、额头和眉毛、笑容、眼睛，古人选取了几个变量来描写美女。如果让计算机来看一个女性，它必然会选择成千上万的变量来说明女性的特征，此时计算机该如何评断是否为美女呢？这就涉及到数据分析领域的主成分和因子分析。</p>
+<p>在做数据分析的时候，我们经常遇到缺失数据的情况，造成这种情况有很多客观因素，而且很多情况下无法避免。这时候面对我们手上残缺的数据，不要灰心丧气，看看泰戈尔的这句话，内心顿时充满积极向上的正能量，有木有？然后呢，我们如何解决缺失数据的问题呢？这一节我们就来系统的总结一下。</p>
 <a id="more"></a>
-<h2 id="主成分分析">主成分分析</h2><p>主成分分析(PCA)是一种数据降维技巧，它能将大量相关变量转化为一组很少的不相关变量，这些无关变量称为主成分。常见处理步骤如下（因子分析步骤相同）:</p>
+<p>首先说一下处理缺失值的步骤。</p>
 <ol>
-<li>数据预处理。计算前确保数据中没有缺失值。</li>
-<li>选择因子模型。判断是需要PCA(数据降维)还是EFA(发现潜在结构)。</li>
-<li>判断要选择的主成分/因子数目。</li>
-<li>选择主成分/因子。</li>
-<li>旋转主成分/因子。</li>
-<li>解释结果。</li>
-<li>计算主成分或因子得分。</li>
+<li>识别缺失数据。</li>
+<li>检查导致数据缺失的原因。</li>
+<li>处理缺失数据。</li>
 </ol>
-<p><strong>1. 数据预处理</strong></p>
-<p>要确保数据没有缺失值，这个后面专门写一篇论述。</p>
-<p><strong>2. 选择因子模型</strong></p>
-<p>这个是根据我们的需要来定的。</p>
-<p><strong>3. 判断要选择的主成分/因子数目</strong></p>
-<p>最常见的是基于特征值的方法。具体操作可以使用Cattell碎石检验和平行分析法进行绘图观察。</p>
-<p><img src="/images/主成分和因子分析/suishi.jpg" alt="选几个主成分"></p>
-<p>从图中可以看出，选择2个主成分即可。</p>
-<p><strong>4. 选择主成分/因子</strong></p>
-<p>提取主成分如下所示。</p>
-<p><img src="/images/主成分和因子分析/zhuchengfen.jpg" alt="提取主成分"></p>
-<p><strong>5. 旋转主成分/因子</strong></p>
-<p>上面得到的主成分并不容易解释，所以需要旋转，旋转可以尽可能对成分去噪。旋转方法有2种，一是选择的成分保持不相关（正交旋转），二是让它们变得相关（斜交旋转）。对于真实数据而言，有时候我们是强制进行了正交旋转，模型反而不太符合真实数据。这时候或许斜交旋转得到的模型更符合真实数据。当然了，斜交旋转更复杂一些。最流行的正交旋转是方差极大旋转，如下所示。</p>
-<p><img src="/images/主成分和因子分析/zhengjiao.jpg" alt="方差极大旋转"></p>
-<p><strong>6. 解释结果</strong></p>
-<p>经过旋转，结果更好解释了。</p>
-<p><strong>7. 计算主成分或因子得分</strong></p>
-<p>可以获得原始数据里每个调查对象在各个主成分上的得分。</p>
-<h2 id="因子分析">因子分析</h2><p>与PCA综合数据和降低维度的目标不同，EFA是假设生成工具，它在帮助理解众多变量之间的关系时候非常有用。具体分析流程和主成分分析类似。这里不再赘述。</p>
+<p><strong>1. 识别缺失数据</strong></p>
+<p>要看哪些变量有缺失值，缺多少个，缺失值都分布在哪一片区域，缺失值变量和其他变量有关系么，缺失值变量自己和发生缺失有关系么（比如变量值太小没测量到，所以缺失了，这就有关系）。我们可以通过矩阵表格和图形来看。</p>
+<p><img src="/images/处理缺失数据的分析总结/queshibiaoge.jpg" alt="缺失表格"></p>
+<p><img src="/images/处理缺失数据的分析总结/queshituxing.jpg" alt="缺失图形"></p>
+<p>通过以上分析，识别出是哪一种缺失类型（MCAR,MAR,NMAR）。如果是MCAR或者MAR类型，可以用多重插补法。如果是NMAR，那需要更专门的方法，但是挺麻烦的，要不你就放弃吧，收集新的数据或者做其他的数据分析。</p>
+<p><strong>2. 检查导致数据缺失的原因</strong></p>
+<p>这个看数据是怎么来的，同时如果知道原因，可以帮助我们判断是哪一种缺失类型。</p>
+<p><strong>3. 处理缺失数据</strong></p>
+<p>处理缺失数据有三种流行方法：</p>
+<p><strong>3.1. 恢复数据的推理方法</strong></p>
+<p>这个非常好理解，通过常识或者其他变量推理出缺失值，反正就是想各种方法推理出缺失值到底是多少。</p>
+<p><strong>3.2. 行删除</strong></p>
+<p>MCAR类型的缺失，可以用行删除，而且最好用有限行删除。</p>
+<p><strong>3.3. 多重插补</strong></p>
+<p>MCAR和MAR类型的缺失，可以用多重插补法。本质上是模拟随机的方法。</p>
+<p>处理缺失数据还有其他方法，比如成对删除（不推荐），简单（非随机）插补（也不推荐，MCAR类型可以一用，但是非MCAR类型就不要用了）</p>
 
       
     </div>
@@ -274,18 +266,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/02/25/处理缺失数据的分析总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          处理缺失数据的分析总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/28/广义线性模型/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">广义线性模型</div>
+    <a href="/2016/02/23/主成分和因子分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">主成分和因子分析</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -314,7 +297,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="主成分和因子分析" data-title="主成分和因子分析" data-url="http://fishminer.github.io/2016/02/23/主成分和因子分析/"></div>
+	<div class="ds-thread" data-thread-key="处理缺失数据的分析总结" data-title="处理缺失数据的分析总结" data-url="http://fishminer.github.io/2016/02/25/处理缺失数据的分析总结/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
