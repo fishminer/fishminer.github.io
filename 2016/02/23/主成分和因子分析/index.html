@@ -5,25 +5,19 @@
   
   <title>主成分和因子分析 | FishMiner的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="手如柔荑，肤如凝脂，领如蝤蛴，齿如瓠犀，螓首蛾眉，巧笑倩兮，美目盼兮。　　　　　　　　　　　　　　　　　　　　　　　　                                ——《诗经·卫风·硕人》
-
-古人写美女的诗词很多，最经典的应该就是诗经里面的这几句。来看看古人的审美观，手、脖子、牙齿、额头和眉毛、笑容、眼睛，古人选取了几个变量来描写美女。如果让计算机来看一个女性，它必然会选择成千上">
+  <meta name="description" content="主成分和因子分析是数据分析里面的利器，应用非常广泛。遥想笔者当年本科写的毕业论文就是通过主成分分析进行图像压缩处理。现在总结一下如何用R语言进行主成分和因子分析。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="主成分和因子分析">
 <meta property="og:url" content="http://fishminer.github.io/2016/02/23/主成分和因子分析/index.html">
 <meta property="og:site_name" content="FishMiner的博客">
-<meta property="og:description" content="手如柔荑，肤如凝脂，领如蝤蛴，齿如瓠犀，螓首蛾眉，巧笑倩兮，美目盼兮。　　　　　　　　　　　　　　　　　　　　　　　　                                ——《诗经·卫风·硕人》
-
-古人写美女的诗词很多，最经典的应该就是诗经里面的这几句。来看看古人的审美观，手、脖子、牙齿、额头和眉毛、笑容、眼睛，古人选取了几个变量来描写美女。如果让计算机来看一个女性，它必然会选择成千上">
+<meta property="og:description" content="主成分和因子分析是数据分析里面的利器，应用非常广泛。遥想笔者当年本科写的毕业论文就是通过主成分分析进行图像压缩处理。现在总结一下如何用R语言进行主成分和因子分析。">
 <meta property="og:image" content="http://fishminer.github.io/images/主成分和因子分析/suishi.jpg">
 <meta property="og:image" content="http://fishminer.github.io/images/主成分和因子分析/zhuchengfen.jpg">
 <meta property="og:image" content="http://fishminer.github.io/images/主成分和因子分析/zhengjiao.jpg">
-<meta property="og:updated_time" content="2016-02-23T13:59:37.080Z">
+<meta property="og:updated_time" content="2016-03-04T15:11:23.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="主成分和因子分析">
-<meta name="twitter:description" content="手如柔荑，肤如凝脂，领如蝤蛴，齿如瓠犀，螓首蛾眉，巧笑倩兮，美目盼兮。　　　　　　　　　　　　　　　　　　　　　　　　                                ——《诗经·卫风·硕人》
-
-古人写美女的诗词很多，最经典的应该就是诗经里面的这几句。来看看古人的审美观，手、脖子、牙齿、额头和眉毛、笑容、眼睛，古人选取了几个变量来描写美女。如果让计算机来看一个女性，它必然会选择成千上">
+<meta name="twitter:description" content="主成分和因子分析是数据分析里面的利器，应用非常广泛。遥想笔者当年本科写的毕业论文就是通过主成分分析进行图像压缩处理。现在总结一下如何用R语言进行主成分和因子分析。">
   
     <link rel="alternative" href="/atom.xml" title="FishMiner的博客" type="application/atom+xml">
   
@@ -231,10 +225,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>手如柔荑，肤如凝脂，领如蝤蛴，齿如瓠犀，螓首蛾眉，巧笑倩兮，美目盼兮。<br>　　　　　　　　　　　　　　　　　　　　　　　　                                ——《诗经·卫风·硕人》</p>
-</blockquote>
-<p>古人写美女的诗词很多，最经典的应该就是诗经里面的这几句。来看看古人的审美观，手、脖子、牙齿、额头和眉毛、笑容、眼睛，古人选取了几个变量来描写美女。如果让计算机来看一个女性，它必然会选择成千上万的变量来说明女性的特征，此时计算机该如何评断是否为美女呢？这就涉及到数据分析领域的主成分和因子分析。</p>
+        <p>主成分和因子分析是数据分析里面的利器，应用非常广泛。遥想笔者当年本科写的毕业论文就是通过主成分分析进行图像压缩处理。现在总结一下如何用R语言进行主成分和因子分析。</p>
 <a id="more"></a>
 <h2 id="主成分分析">主成分分析</h2><p>主成分分析(PCA)是一种数据降维技巧，它能将大量相关变量转化为一组很少的不相关变量，这些无关变量称为主成分。常见处理步骤如下（因子分析步骤相同）:</p>
 <ol>

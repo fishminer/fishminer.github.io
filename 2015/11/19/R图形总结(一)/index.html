@@ -5,16 +5,12 @@
   
   <title>R图形总结(一) | FishMiner的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一本书里又没有画儿，又没有说话，那样书要它干什么呢？　　　　　　　　　　　　　　　　　　　　　　　　                            ——路易斯·卡罗尔，《爱丽丝梦游仙境》
-
-本人最近在回顾Ｒ的相关知识，面对Ｒ繁杂的知识内容，想做一个系列的总结。该总结不涉及Ｒ具体的代码和实例应用，只总结用Ｒ做数据分析的基本思路。工欲善其事必先利其器，图画和对话的重要性连我们天真可爱的爱丽丝小">
+  <meta name="description" content="本人最近在回顾Ｒ的相关知识，面对Ｒ繁杂的知识内容，想做一个系列的总结。该总结不涉及Ｒ具体的代码和实例应用，只总结用Ｒ做数据分析的基本思路。工欲善其事必先利其器，对应到Ｒ数据分析里，图形可视化和交互式编程是很重要的，所以从图形开始总结。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R图形总结(一)">
 <meta property="og:url" content="http://fishminer.github.io/2015/11/19/R图形总结(一)/index.html">
 <meta property="og:site_name" content="FishMiner的博客">
-<meta property="og:description" content="一本书里又没有画儿，又没有说话，那样书要它干什么呢？　　　　　　　　　　　　　　　　　　　　　　　　                            ——路易斯·卡罗尔，《爱丽丝梦游仙境》
-
-本人最近在回顾Ｒ的相关知识，面对Ｒ繁杂的知识内容，想做一个系列的总结。该总结不涉及Ｒ具体的代码和实例应用，只总结用Ｒ做数据分析的基本思路。工欲善其事必先利其器，图画和对话的重要性连我们天真可爱的爱丽丝小">
+<meta property="og:description" content="本人最近在回顾Ｒ的相关知识，面对Ｒ繁杂的知识内容，想做一个系列的总结。该总结不涉及Ｒ具体的代码和实例应用，只总结用Ｒ做数据分析的基本思路。工欲善其事必先利其器，对应到Ｒ数据分析里，图形可视化和交互式编程是很重要的，所以从图形开始总结。">
 <meta property="og:image" content="http://fishminer.github.io/images/R图形总结-1/jiandan.jpg">
 <meta property="og:image" content="http://fishminer.github.io/images/R图形总结-1/shuiping.jpg">
 <meta property="og:image" content="http://fishminer.github.io/images/R图形总结-1/stack.jpg">
@@ -27,12 +23,10 @@
 <meta property="og:image" content="http://fishminer.github.io/images/R图形总结-1/xiang.jpg">
 <meta property="og:image" content="http://fishminer.github.io/images/R图形总结-1/xiaotiqin.jpg">
 <meta property="og:image" content="http://fishminer.github.io/images/R图形总结-1/diantu.jpg">
-<meta property="og:updated_time" content="2015-11-19T13:43:41.348Z">
+<meta property="og:updated_time" content="2016-03-04T15:01:57.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R图形总结(一)">
-<meta name="twitter:description" content="一本书里又没有画儿，又没有说话，那样书要它干什么呢？　　　　　　　　　　　　　　　　　　　　　　　　                            ——路易斯·卡罗尔，《爱丽丝梦游仙境》
-
-本人最近在回顾Ｒ的相关知识，面对Ｒ繁杂的知识内容，想做一个系列的总结。该总结不涉及Ｒ具体的代码和实例应用，只总结用Ｒ做数据分析的基本思路。工欲善其事必先利其器，图画和对话的重要性连我们天真可爱的爱丽丝小">
+<meta name="twitter:description" content="本人最近在回顾Ｒ的相关知识，面对Ｒ繁杂的知识内容，想做一个系列的总结。该总结不涉及Ｒ具体的代码和实例应用，只总结用Ｒ做数据分析的基本思路。工欲善其事必先利其器，对应到Ｒ数据分析里，图形可视化和交互式编程是很重要的，所以从图形开始总结。">
   
     <link rel="alternative" href="/atom.xml" title="FishMiner的博客" type="application/atom+xml">
   
@@ -240,10 +234,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>一本书里又没有画儿，又没有说话，那样书要它干什么呢？<br>　　　　　　　　　　　　　　　　　　　　　　　　                            ——路易斯·卡罗尔，《爱丽丝梦游仙境》</p>
-</blockquote>
-<p>本人最近在回顾Ｒ的相关知识，面对Ｒ繁杂的知识内容，想做一个系列的总结。该总结不涉及Ｒ具体的代码和实例应用，只总结用Ｒ做数据分析的基本思路。工欲善其事必先利其器，图画和对话的重要性连我们天真可爱的爱丽丝小ＭＭ都明白，那么对应到Ｒ数据分析里，图形可视化和交互式编程也是很重要的。</p>
+        <p>本人最近在回顾Ｒ的相关知识，面对Ｒ繁杂的知识内容，想做一个系列的总结。该总结不涉及Ｒ具体的代码和实例应用，只总结用Ｒ做数据分析的基本思路。工欲善其事必先利其器，对应到Ｒ数据分析里，图形可视化和交互式编程是很重要的，所以从图形开始总结。</p>
 <a id="more"></a>
 <h2 id="类别型变量">类别型变量</h2><h2 id="条形图">条形图</h2><p>条形图展示了类别型变量的分布和频数，函数是barplot()，</p>
 <p><strong>1. 简单条形图</strong></p>
