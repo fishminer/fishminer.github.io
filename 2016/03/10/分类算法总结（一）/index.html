@@ -3,20 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>处理缺失数据的分析总结 | FishMiner的博客</title>
+  <title>分类算法总结（一） | FishMiner的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在做数据分析的时候，我们经常遇到缺失数据的情况，造成这种情况有很多客观因素，而且很多情况下无法避免。这时候面对手上残缺的数据，我们该如何解决缺失数据的问题呢？这一节我们就来系统的总结一下。">
+  <meta name="description" content="之前用了十几周的时间对R语言做了一个系列的总结。现在开始对机器学习算法做一个大致总结。机器学习中首先就是监督学习，在监督学习中，分类是一个很基础的部分。我们试想一下，人是如何通过学习认知这个世界的？最基本的一点就是分类，我们通过学习把世间万物分门别类，每一类都有各自的特征。那么计算机要像人一样学习和思考，首先就必须学会分类。所以我们从分类开始进行总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="处理缺失数据的分析总结">
-<meta property="og:url" content="http://fishminer.github.io/2016/02/25/处理缺失数据的分析总结/index.html">
+<meta property="og:title" content="分类算法总结（一）">
+<meta property="og:url" content="http://fishminer.github.io/2016/03/10/分类算法总结（一）/index.html">
 <meta property="og:site_name" content="FishMiner的博客">
-<meta property="og:description" content="在做数据分析的时候，我们经常遇到缺失数据的情况，造成这种情况有很多客观因素，而且很多情况下无法避免。这时候面对手上残缺的数据，我们该如何解决缺失数据的问题呢？这一节我们就来系统的总结一下。">
-<meta property="og:image" content="http://fishminer.github.io/images/处理缺失数据的分析总结/queshibiaoge.jpg">
-<meta property="og:image" content="http://fishminer.github.io/images/处理缺失数据的分析总结/queshituxing.jpg">
-<meta property="og:updated_time" content="2016-03-04T15:00:08.032Z">
+<meta property="og:description" content="之前用了十几周的时间对R语言做了一个系列的总结。现在开始对机器学习算法做一个大致总结。机器学习中首先就是监督学习，在监督学习中，分类是一个很基础的部分。我们试想一下，人是如何通过学习认知这个世界的？最基本的一点就是分类，我们通过学习把世间万物分门别类，每一类都有各自的特征。那么计算机要像人一样学习和思考，首先就必须学会分类。所以我们从分类开始进行总结。">
+<meta property="og:updated_time" content="2016-03-10T14:19:41.503Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="处理缺失数据的分析总结">
-<meta name="twitter:description" content="在做数据分析的时候，我们经常遇到缺失数据的情况，造成这种情况有很多客观因素，而且很多情况下无法避免。这时候面对手上残缺的数据，我们该如何解决缺失数据的问题呢？这一节我们就来系统的总结一下。">
+<meta name="twitter:title" content="分类算法总结（一）">
+<meta name="twitter:description" content="之前用了十几周的时间对R语言做了一个系列的总结。现在开始对机器学习算法做一个大致总结。机器学习中首先就是监督学习，在监督学习中，分类是一个很基础的部分。我们试想一下，人是如何通过学习认知这个世界的？最基本的一点就是分类，我们通过学习把世间万物分门别类，每一类都有各自的特征。那么计算机要像人一样学习和思考，首先就必须学会分类。所以我们从分类开始进行总结。">
   
     <link rel="alternative" href="/atom.xml" title="FishMiner的博客" type="application/atom+xml">
   
@@ -183,11 +181,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-处理缺失数据的分析总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-分类算法总结（一）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/25/处理缺失数据的分析总结/" class="article-date">
-  	<time datetime="2016-02-24T16:27:30.000Z" itemprop="datePublished">2016-02-25</time>
+      <a href="/2016/03/10/分类算法总结（一）/" class="article-date">
+  	<time datetime="2016-03-10T13:37:00.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
   
@@ -200,7 +198,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      处理缺失数据的分析总结
+      分类算法总结（一）
     </h1>
   
 
@@ -214,7 +212,7 @@ var _hmt = _hmt || [];
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/R-Language/">R Language</a>
+	<a class="article-category-link" href="/categories/机器学习/">机器学习</a>
 	</div>
 
 
@@ -224,30 +222,28 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在做数据分析的时候，我们经常遇到缺失数据的情况，造成这种情况有很多客观因素，而且很多情况下无法避免。这时候面对手上残缺的数据，我们该如何解决缺失数据的问题呢？这一节我们就来系统的总结一下。</p>
+        <p>之前用了十几周的时间对R语言做了一个系列的总结。现在开始对机器学习算法做一个大致总结。机器学习中首先就是监督学习，在监督学习中，分类是一个很基础的部分。我们试想一下，人是如何通过学习认知这个世界的？最基本的一点就是分类，我们通过学习把世间万物分门别类，每一类都有各自的特征。那么计算机要像人一样学习和思考，首先就必须学会分类。所以我们从分类开始进行总结。</p>
 <a id="more"></a>
-<p>首先说一下处理缺失值的步骤。</p>
-<ol>
-<li>识别缺失数据。</li>
-<li>检查导致数据缺失的原因。</li>
-<li>处理缺失数据。</li>
-</ol>
-<p><strong>1. 识别缺失数据</strong></p>
-<p>要看哪些变量有缺失值，缺多少个，缺失值都分布在哪一片区域，缺失值变量和其他变量有关系么，缺失值变量自己和发生缺失有关系么（比如变量值太小没测量到，所以缺失了，这就有关系）。我们可以通过矩阵表格和图形来看。</p>
-<p><img src="/images/处理缺失数据的分析总结/queshibiaoge.jpg" alt="缺失表格"></p>
-<p><img src="/images/处理缺失数据的分析总结/queshituxing.jpg" alt="缺失图形"></p>
-<p>通过以上分析，识别出是哪一种缺失类型（MCAR,MAR,NMAR）。如果是MCAR或者MAR类型，可以用多重插补法。如果是NMAR，那需要更专门的方法，但是挺麻烦的，要不你就放弃吧，收集新的数据或者做其他的数据分析。</p>
-<p><strong>2. 检查导致数据缺失的原因</strong></p>
-<p>这个看数据是怎么来的，同时如果知道原因，可以帮助我们判断是哪一种缺失类型。</p>
-<p><strong>3. 处理缺失数据</strong></p>
-<p>处理缺失数据有三种流行方法：</p>
-<p><strong>3.1. 恢复数据的推理方法</strong></p>
-<p>这个非常好理解，通过常识或者其他变量推理出缺失值，反正就是想各种方法推理出缺失值到底是多少。</p>
-<p><strong>3.2. 行删除</strong></p>
-<p>MCAR类型的缺失，可以用行删除，而且最好用有限行删除。</p>
-<p><strong>3.3. 多重插补</strong></p>
-<p>MCAR和MAR类型的缺失，可以用多重插补法。本质上是模拟随机的方法。</p>
-<p>处理缺失数据还有其他方法，比如成对删除（不推荐），简单（非随机）插补（也不推荐，MCAR类型可以一用，但是非MCAR类型就不要用了）</p>
+<p><strong>1. KNN算法</strong></p>
+<p>在分类算法里面，最简单有效的就是KNN算法。简单的说，KNN算法采用测量不同特征值之间的距离进行分类。比如说用欧氏距离。</p>
+<ul>
+<li><p>优点：精度高，对异常值不敏感，无数据输入假定。</p>
+</li>
+<li><p>缺点：计算复杂度高，空间复杂度高。</p>
+</li>
+<li><p>适用数据范围：数值型和标称型</p>
+</li>
+</ul>
+<p><strong>2. 决策树算法</strong></p>
+<p>决策树ID3算法通过计算信息增益选择特征划分数据集，C4.5算法用信息增益比来选择特征。Cart算法既可以用于分类，也可以用于回归。这三种算法的基本步骤都是通过选择特征划分数据集，然后生成决策树，树的同一个叶子节点里面都是同一类的数据。决策树对于训练数据可能会出现过拟合，这时候树模型的复杂度太高，对训练数据拟合的好，对测试数据拟合的不好。为了增强决策树的泛化能力，我们对树进行剪枝，依据的最优函数是树的损失函数最小。</p>
+<ul>
+<li><p>优点：计算复杂度不高，输出结果易于理解，对中间值的缺失不敏感，可以处理不相关特征数据。</p>
+</li>
+<li><p>缺点：可能会产生过度匹配的问题（过拟合）。</p>
+</li>
+<li><p>适用数据类型：数值型和标称型。</p>
+</li>
+</ul>
 
       
     </div>
@@ -257,18 +253,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/03/10/分类算法总结（一）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          分类算法总结（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/23/主成分和因子分析/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">主成分和因子分析</div>
+    <a href="/2016/02/25/处理缺失数据的分析总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">处理缺失数据的分析总结</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -297,7 +284,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="处理缺失数据的分析总结" data-title="处理缺失数据的分析总结" data-url="http://fishminer.github.io/2016/02/25/处理缺失数据的分析总结/"></div>
+	<div class="ds-thread" data-thread-key="分类算法总结（一）" data-title="分类算法总结（一）" data-url="http://fishminer.github.io/2016/03/10/分类算法总结（一）/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
