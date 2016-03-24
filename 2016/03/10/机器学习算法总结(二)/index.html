@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>分类算法总结 | FishMiner的博客</title>
+  <title>机器学习算法总结(二) | FishMiner的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前用了十几周的时间对R语言做了一个系列的总结。现在开始对机器学习算法做一个大致总结。机器学习中首先就是监督学习，在监督学习中，分类是一个很基础的部分。我们试想一下，人是如何通过学习认知这个世界的？最基本的一点就是分类，我们通过学习把世间万物分门别类，每一类都有各自的特征。那么计算机要像人一样学习和思考，首先就必须学会分类。所以我们从分类开始进行总结。">
+  <meta name="description" content="承接上一篇总结，继续对分类算法和其他算法做总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分类算法总结">
-<meta property="og:url" content="http://fishminer.github.io/2016/03/10/分类算法总结/index.html">
+<meta property="og:title" content="机器学习算法总结(二)">
+<meta property="og:url" content="http://fishminer.github.io/2016/03/10/机器学习算法总结(二)/index.html">
 <meta property="og:site_name" content="FishMiner的博客">
-<meta property="og:description" content="之前用了十几周的时间对R语言做了一个系列的总结。现在开始对机器学习算法做一个大致总结。机器学习中首先就是监督学习，在监督学习中，分类是一个很基础的部分。我们试想一下，人是如何通过学习认知这个世界的？最基本的一点就是分类，我们通过学习把世间万物分门别类，每一类都有各自的特征。那么计算机要像人一样学习和思考，首先就必须学会分类。所以我们从分类开始进行总结。">
-<meta property="og:updated_time" content="2016-03-11T13:24:34.503Z">
+<meta property="og:description" content="承接上一篇总结，继续对分类算法和其他算法做总结。">
+<meta property="og:updated_time" content="2016-03-24T13:44:06.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类算法总结">
-<meta name="twitter:description" content="之前用了十几周的时间对R语言做了一个系列的总结。现在开始对机器学习算法做一个大致总结。机器学习中首先就是监督学习，在监督学习中，分类是一个很基础的部分。我们试想一下，人是如何通过学习认知这个世界的？最基本的一点就是分类，我们通过学习把世间万物分门别类，每一类都有各自的特征。那么计算机要像人一样学习和思考，首先就必须学会分类。所以我们从分类开始进行总结。">
+<meta name="twitter:title" content="机器学习算法总结(二)">
+<meta name="twitter:description" content="承接上一篇总结，继续对分类算法和其他算法做总结。">
   
     <link rel="alternative" href="/atom.xml" title="FishMiner的博客" type="application/atom+xml">
   
@@ -181,10 +181,10 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-分类算法总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-机器学习算法总结(二)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/10/分类算法总结/" class="article-date">
+      <a href="/2016/03/10/机器学习算法总结(二)/" class="article-date">
   	<time datetime="2016-03-10T13:37:00.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
@@ -198,7 +198,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      分类算法总结
+      机器学习算法总结(二)
     </h1>
   
 
@@ -222,47 +222,27 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前用了十几周的时间对R语言做了一个系列的总结。现在开始对机器学习算法做一个大致总结。机器学习中首先就是监督学习，在监督学习中，分类是一个很基础的部分。我们试想一下，人是如何通过学习认知这个世界的？最基本的一点就是分类，我们通过学习把世间万物分门别类，每一类都有各自的特征。那么计算机要像人一样学习和思考，首先就必须学会分类。所以我们从分类开始进行总结。</p>
+        <p>承接上一篇总结，继续对分类算法和其他算法做总结。</p>
 <a id="more"></a>
-<p><strong>1. KNN算法</strong></p>
-<p>在分类算法里面，最简单有效的就是KNN算法。简单的说，KNN算法采用测量不同特征值之间的距离进行分类。比如说用欧氏距离。</p>
+<p><strong>1. 支持向量机(SVM)</strong></p>
+<p>该分类算法非常流行，本质上是基于最大间隔分隔数据，也就是说找出一个分隔超平面，使得最大化支持向量到到分隔面的距离。这是一个最优化问题，目前比较流行的是序列最小优化算法(SMO)。如果数据比较复杂，存在非线性可分的情况，这时候需要使用核函数（本质上是利用核函数将数据映射到高维空间，在高维空间中解决线性问题，这等价于在低维空间中解决非线性问题），最常用的核函数是径向基核函数，可以选用其高斯版本。</p>
 <ul>
-<li><p>优点：精度高，对异常值不敏感，无数据输入假定。</p>
+<li><p>优点：泛化错误率低，计算开销不大，结果容易解释。</p>
 </li>
-<li><p>缺点：计算复杂度高，空间复杂度高。</p>
+<li><p>缺点：对参数调节和核函数的选择敏感，原始分类器不加修改仅适用于处理二类问题。</p>
 </li>
-<li><p>适用数据范围：数值型和标称型</p>
+<li><p>适用数据类型：数值型和标称型数据。</p>
 </li>
 </ul>
-<p><strong>2. 决策树算法</strong></p>
-<p>决策树ID3算法通过计算信息增益选择特征划分数据集，C4.5算法用信息增益比来选择特征。Cart算法既可以用于分类，也可以用于回归。这三种算法的基本步骤都是通过选择特征划分数据集，然后生成决策树，树的同一个叶子节点里面都是同一类的数据。决策树对于训练数据可能会出现过拟合，这时候树模型的复杂度太高，对训练数据拟合的好，对测试数据拟合的不好。为了增强决策树的泛化能力，我们对树进行剪枝，依据的最优函数是树的损失函数最小。</p>
+<p><strong>2. AdaBoost元算法</strong></p>
+<p>元算法是对其他算法进行组合的一种方式。AdaBoost算法是最流行的元算法。它的思路是这样的，先分配给所有数据一个相等的权重，然后使用一个弱分类器去分类，得到分类结果和训练集的标注结果比对，得到错误率，通过错误率计算出alpha值（错误率低的alpha值相对较高，该alpha值是此弱分类器前的系数），通过该alpha值更新所有数据的权重，使得正确分类的数据权重降低，错误分类的数据权重升高。然后再使用弱分类器进行分类，权重和error向量的点积得到weightError，这个要最小化，如何最小化呢？调整弱分类器的参数。这时候得到第二个新的弱分类器，与上一个弱分类器参数不同。这时候得到强分类器alpha1<em>弱分类器1+alpha2</em>弱分类器2，用这个强分类器计算出分类结果，然后与标注比对得到错误率，使用该错误率计算出新的alpha值，然后去更新得到数据新的权重。该过程一直迭代，直到错误率为0或者非常小。此时，我们得到了一个强的分类器。要注意的是，随着弱分类器增多，训练集的错误率会减小甚至到0，但是测试集的错误率会先减小再增大，如果是个好的数据集，会有最小值存在。</p>
 <ul>
-<li><p>优点：计算复杂度不高，输出结果易于理解，对中间值的缺失不敏感，可以处理不相关特征数据。</p>
+<li><p>优点：泛化错误率低，容易编码，可以应用在大部分分类器上，无参数调整。</p>
 </li>
-<li><p>缺点：可能会产生过度匹配的问题（过拟合）。</p>
-</li>
-<li><p>适用数据类型：数值型和标称型。</p>
+<li><p>缺点：对离群点敏感。</p>
 </li>
 </ul>
-<p><strong>3. 朴素贝叶斯算法</strong></p>
-<p>这种算法是基于概率论的分类算法，通过计算在给定特征向量的条件下属于每一类的概率，然后选择条件概率最大的那一类作为分类结果。之所以称作朴素，是因为我们假设特征之间相互独立并且同等重要。尽管文本分类有时候上述假设存在一点小瑕疵，但是朴素贝叶斯分类的实际效果很好。</p>
-<ul>
-<li><p>优点：在数据较少的情况下仍然有效，可以处理多类别问题。</p>
-</li>
-<li><p>缺点：对于输入数据的准备方式较为敏感（类型特征使用1-of-k编码，特征值非负，此处顺便说一下，决策树和朴素贝叶斯可以不标准化数据，但是逻辑回归要标准化，当然这些算法都可以通过标准化来提高模型准确度）。</p>
-</li>
-</ul>
-<p>适用数据类型：标称型数据。</p>
-<p><strong>4. Logistic回归算法</strong></p>
-<p>这个算法需要用到最优化理论。Logistic回归可以用于2个类别分类，稳健logistic回归用于数据出现离群点和强影响点时候，多项分布回归用于2个以上无序类别。序数Logistic回归用于一组有序的类别（比如差/良/好）。</p>
-<ul>
-<li><p>优点：计算代价不高，易于理解和实现。</p>
-</li>
-<li><p>缺点：容易欠拟合，分类精度可能不高。</p>
-</li>
-<li><p>适用数据类型：数值型和标称型。</p>
-</li>
-</ul>
+<p>适用数据类型：数值型和标称型数据。</p>
 
       
     </div>
@@ -271,6 +251,15 @@ var _hmt = _hmt || [];
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/03/10/机器学习算法总结(一)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          机器学习算法总结(一)
+        
+      </div>
+    </a>
   
   
     <a href="/2016/02/25/处理缺失数据的分析总结/" id="article-nav-older" class="article-nav-link-wrap">
@@ -303,7 +292,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="分类算法总结" data-title="分类算法总结" data-url="http://fishminer.github.io/2016/03/10/分类算法总结/"></div>
+	<div class="ds-thread" data-thread-key="机器学习算法总结(二)" data-title="机器学习算法总结(二)" data-url="http://fishminer.github.io/2016/03/10/机器学习算法总结(二)/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
