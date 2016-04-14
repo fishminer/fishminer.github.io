@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>机器学习算法总结(二) | FishMiner的博客</title>
+  <title>机器学习算法总结(三) | FishMiner的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="承接上一篇总结，继续对分类算法和其他算法做总结。">
+  <meta name="description" content="这里总结无监督机器学习算法。在无监督学习中，目标变量事先并不存在，也就是说没有标注。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习算法总结(二)">
-<meta property="og:url" content="http://fishminer.github.io/2016/03/24/机器学习算法总结(二)/index.html">
+<meta property="og:title" content="机器学习算法总结(三)">
+<meta property="og:url" content="http://fishminer.github.io/2016/04/14/机器学习算法总结(三)/index.html">
 <meta property="og:site_name" content="FishMiner的博客">
-<meta property="og:description" content="承接上一篇总结，继续对分类算法和其他算法做总结。">
-<meta property="og:updated_time" content="2016-03-24T13:48:38.785Z">
+<meta property="og:description" content="这里总结无监督机器学习算法。在无监督学习中，目标变量事先并不存在，也就是说没有标注。">
+<meta property="og:updated_time" content="2016-04-14T14:25:29.215Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习算法总结(二)">
-<meta name="twitter:description" content="承接上一篇总结，继续对分类算法和其他算法做总结。">
+<meta name="twitter:title" content="机器学习算法总结(三)">
+<meta name="twitter:description" content="这里总结无监督机器学习算法。在无监督学习中，目标变量事先并不存在，也就是说没有标注。">
   
     <link rel="alternative" href="/atom.xml" title="FishMiner的博客" type="application/atom+xml">
   
@@ -181,11 +181,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-机器学习算法总结(二)" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-机器学习算法总结(三)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/24/机器学习算法总结(二)/" class="article-date">
-  	<time datetime="2016-03-24T13:37:00.000Z" itemprop="datePublished">2016-03-24</time>
+      <a href="/2016/04/14/机器学习算法总结(三)/" class="article-date">
+  	<time datetime="2016-04-14T13:37:00.000Z" itemprop="datePublished">2016-04-14</time>
 </a>
     </div>
   
@@ -198,7 +198,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      机器学习算法总结(二)
+      机器学习算法总结(三)
     </h1>
   
 
@@ -222,27 +222,38 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>承接上一篇总结，继续对分类算法和其他算法做总结。</p>
+        <p>这里总结无监督机器学习算法。在无监督学习中，目标变量事先并不存在，也就是说没有标注。</p>
 <a id="more"></a>
-<p><strong>1. 支持向量机(SVM)</strong></p>
-<p>该分类算法非常流行，本质上是基于最大间隔分隔数据，也就是说找出一个分隔超平面，使得最大化支持向量到到分隔面的距离。这是一个最优化问题，目前比较流行的是序列最小优化算法(SMO)。如果数据比较复杂，存在非线性可分的情况，这时候需要使用核函数（本质上是利用核函数将数据映射到高维空间，在高维空间中解决线性问题，这等价于在低维空间中解决非线性问题），最常用的核函数是径向基核函数，可以选用其高斯版本。</p>
+<p><strong>1. K均值聚类算法</strong></p>
+<p>K均值是发现给定数据集的K个簇的算法。它的工作流程是这样的：首先，随机确定K个初始点作为质心。然后将数据集中的每个点分配到一个簇中，具体来讲，为每个点距其最近的质心，并将其分配给该质心所对应的簇。这一步完成以后，每个簇的质心更新为该簇所有点的平均值。通过此法反复迭代，最后每个簇得到一个稳定的质心。度量聚类效果的指标是SSE(误差平方和)。该算法需要根据情况选择合适的距离计算方法。该算法的性能会受到所选距离计算方法的影响。</p>
 <ul>
-<li><p>优点：泛化错误率低，计算开销不大，结果容易解释。</p>
+<li><p>优点：容易实现。</p>
 </li>
-<li><p>缺点：对参数调节和核函数的选择敏感，原始分类器不加修改仅适用于处理二类问题。</p>
+<li><p>缺点：可能收敛到局部最小值，在大规模数据集上收敛较慢。</p>
 </li>
-<li><p>适用数据类型：数值型和标称型数据。</p>
+<li><p>适用数据类型：数值型数据。</p>
 </li>
 </ul>
-<p><strong>2. AdaBoost元算法</strong></p>
-<p>元算法是对其他算法进行组合的一种方式。AdaBoost算法是最流行的元算法。它的思路是这样的，先分配给所有数据一个相等的权重，然后使用一个弱分类器去分类，得到分类结果和训练集的标注结果比对，得到错误率，通过错误率计算出alpha值（错误率低的alpha值相对较高，该alpha值是此弱分类器前的系数），通过该alpha值更新所有数据的权重，使得正确分类的数据权重降低，错误分类的数据权重升高。然后再使用弱分类器进行分类，权重和error向量的点积得到weightError，这个要最小化，如何最小化呢？调整弱分类器的参数。这时候得到第二个新的弱分类器，与上一个弱分类器参数不同。这时候得到强分类器alpha1<em>弱分类器1+alpha2</em>弱分类器2，用这个强分类器计算出分类结果，然后与标注比对得到错误率，使用该错误率计算出新的alpha值，然后去更新得到数据新的权重。该过程一直迭代，直到错误率为0或者非常小。此时，我们得到了一个强的分类器。要注意的是，随着弱分类器增多，训练集的错误率会减小甚至到0，但是测试集的错误率会先减小再增大，如果是个好的数据集，会有最小值存在。</p>
+<p><strong>2. Apriori算法进行关联分析</strong></p>
+<p>关联分析是一种在大规模数据集中寻找有趣关系的分析方法，这些关系可以有两种形式：频繁项集或者关联规则。Apriori原理是说如果某个项集是频繁的，那么它的所有子集也是频繁的。使用该原理可以避免项集数目的指数增长，从而在合理时间内计算出频繁项集。频繁项集要满足最小支持度要求。Apriori算法从频繁项集中通过计算可信度挖掘关联规则。</p>
 <ul>
-<li><p>优点：泛化错误率低，容易编码，可以应用在大部分分类器上，无参数调整。</p>
+<li><p>优点：容易编码实现。</p>
 </li>
-<li><p>缺点：对离群点敏感。</p>
+<li><p>缺点：在大数据集上可能较慢。</p>
+</li>
+<li><p>适用数据类型：数值型或者标称型数据。</p>
 </li>
 </ul>
-<p>适用数据类型：数值型和标称型数据。</p>
+<p><strong>3. FP-growth算法高效发现频繁项集</strong></p>
+<p>该算法只会扫描数据集两次，它发现频繁项集的过程是：（1）构建FP树。（2）从FP树种挖掘频繁项集。该算法能高效发现频繁项集，但是不能用于发现关联规则。</p>
+<ul>
+<li><p>优点：一般要快于Apriori算法。</p>
+</li>
+<li><p>缺点：实现比较困难，在某些数据集上性能会下降。</p>
+</li>
+<li><p>适用数据类型：标称型数据。</p>
+</li>
+</ul>
 
       
     </div>
@@ -252,18 +263,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/04/14/机器学习算法总结(三)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          机器学习算法总结(三)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/10/机器学习算法总结(一)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习算法总结(一)</div>
+    <a href="/2016/03/24/机器学习算法总结(二)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习算法总结(二)</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -292,7 +294,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="机器学习算法总结(二)" data-title="机器学习算法总结(二)" data-url="http://fishminer.github.io/2016/03/24/机器学习算法总结(二)/"></div>
+	<div class="ds-thread" data-thread-key="机器学习算法总结(三)" data-title="机器学习算法总结(三)" data-url="http://fishminer.github.io/2016/04/14/机器学习算法总结(三)/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
